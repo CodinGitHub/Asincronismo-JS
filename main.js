@@ -10,7 +10,7 @@ function agregarIngredientes(){
     // }
     // setTimeout(agregarIngredientes,1000)
 
-    let promesaEntregaIngredientes = new Promise((resolve, reject)=>{
+    var promesaEntregaIngredientes = new Promise((resolve, reject)=>{
         setTimeout(()=>{
             resolve('Aquí esta tu pedido');
             reject('Lo siento se me averió');
@@ -20,10 +20,13 @@ function agregarIngredientes(){
     promesaEntregaIngredientes
         .then(() => {
             console.log('2. Agregar ingredientes');
+            hornear();
+            servir();
         })
         .catch((error)=>{
             console.log(error);
         });
+
 }
 
 function hornear(){
@@ -36,5 +39,5 @@ function servir(){
 
 prepararMasa();
 agregarIngredientes();
-hornear();
-servir();
+
+//--------------------------------------------------------//
