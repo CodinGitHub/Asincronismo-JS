@@ -3,31 +3,30 @@ function prepararMasa(){
 }
 
 function agregarIngredientes(){
-    // console.log('2. Agregar ingredientes');
+    console.log('2. Agregar ingredientes');
 
     // function agregarIngredientes(){
     //     console.log('2. Agregar ingredientes');
     // }
-    // setTimeout(agregarIngredientes,1000)
-
-    var promesaEntregaIngredientes = new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            resolve('Aquí esta tu pedido');
-            reject('Lo siento se me averió');
-        },1000)
-    }) 
-
-    promesaEntregaIngredientes
-        .then(() => {
-            console.log('2. Agregar ingredientes');
-            hornear();
-            servir();
-        })
-        .catch((error)=>{
-            console.log(error);
-        });
-
+    // setTimeout(agregarIngredientes,1000)    
 }
+
+const promesaEntregaIngredientes = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        resolve('Aquí esta tu pedido');
+        // reject('Lo siento se me averió');
+    },1000)
+}) 
+
+promesaEntregaIngredientes
+    .then(() => {
+        console.log('2. Agregar ingredientes');
+        hornear();
+        servir();
+    })
+    .catch((error)=>{
+        console.log(error);
+    });
 
 function hornear(){
     console.log('3. Hornear');
